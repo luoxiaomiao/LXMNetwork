@@ -8,8 +8,8 @@
 
 #import "LXMInfoManager.h"
 #import "LXMNetworkDriver.h"
-#import <YYModel.h>
-#import <AFNetworking.h>
+#import <YYModel/YYModel.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface LXMInfoManager()<LXMNetworkDriverDelegate, LXMNetworkSerialProtocol>
 

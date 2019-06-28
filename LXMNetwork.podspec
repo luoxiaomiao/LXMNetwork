@@ -1,21 +1,22 @@
 
-Pod::Spec.new do |s|
-  s.name         = "LXMNetwork"
-  s.version      = "0.0.1" 
-  s.license      = "MIT" 
-  s.summary      = "基于AFNetworking二次封装的网络组件" 
+Pod::Spec.new do |spec|
 
-  s.homepage     = "https://github.com/luoxiaomiao/LXMNetwork" 
-  s.source       = { :git => "https://github.com/luoxiaomiao/LXMNetwork.git", :tag => "#{s.version}" }
-  s.source_files = "Classes/*.{h,m}" 
-  s.requires_arc = true
-  s.platform     = :ios, "7.0"
-  s.dependency  "AFNetworking"
-  s.dependency  "YYModel"
-  s.frameworks = "UIKit", "Foundation"
+  spec.name         = "LXMNetwork"
+  spec.version      = "0.0.1"
+  spec.summary      = "网络组件"
+  spec.description  = <<-DESC
+                      基于AFNetwoking的二次封装网络组件
+                   DESC
+  spec.homepage     = "https://github.com/luoxiaomiao/LXMNetwork"
+  spec.license      = "MIT"
+  spec.author             = { "luoxiaomiao" => "834045350@qq.com" }
+  spec.platform     = :ios, "8.0"
+  spec.source       = { :git => "https://github.com/luoxiaomiao/LXMNetwork.git", :tag => "#{spec.version}" }
+  spec.source_files  = "Classes", "Classes/*.{h,m}"
+  # spec.exclude_files = "Classes/Exclude"
+  spec.requires_arc = true
+  spec.dependency "AFNetworking"
+  spec.dependency "YYModel"
 
-  s.author             = { "LXM" => "834045350@qq.com" }
-  s.social_media_url   = "https:www.omiao.cc"
 
 end
-
