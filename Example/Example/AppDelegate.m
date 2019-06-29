@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LXMInfoManager.h"
+#import <LXMNetwork/LXMNetwork.h>
 
 @interface AppDelegate ()
 

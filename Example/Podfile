@@ -5,6 +5,8 @@ inhibit_all_warnings!
 target 'Example' do
   # use_frameworks!
 
+pod 'LXMNetwork', :path => '../'
+  
 pod 'AFNetworking'
 pod 'YYModel'
 

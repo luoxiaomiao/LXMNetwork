@@ -14,10 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - LXMNetwork (0.0.1):
+    - AFNetworking
+    - YYModel
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
+  - LXMNetwork (from `../`)
   - YYModel
 
 SPEC REPOS:
@@ -25,10 +29,15 @@ SPEC REPOS:
     - AFNetworking
     - YYModel
 
+EXTERNAL SOURCES:
+  LXMNetwork:
+    :path: "../"
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  LXMNetwork: 386d3ae512ccd0e5729db99bcb7700a23ec4d47a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 90cb014335f6db460297187419638c5fec46d687
+PODFILE CHECKSUM: deccbbaa92ff5ccc253d66c3239d457b2007590d
 
 COCOAPODS: 1.6.1

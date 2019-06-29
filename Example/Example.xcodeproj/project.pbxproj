@@ -13,10 +13,6 @@
 		35E4D54F22C61B25009FBBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E4D54E22C61B25009FBBC9 /* Assets.xcassets */; };
 		35E4D55222C61B25009FBBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E4D55022C61B25009FBBC9 /* LaunchScreen.storyboard */; };
 		35E4D55522C61B25009FBBC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D55422C61B25009FBBC9 /* main.m */; };
-		35E4D56E22C6239F009FBBC9 /* LXMNetworkConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D56722C6239F009FBBC9 /* LXMNetworkConstant.m */; };
-		35E4D56F22C6239F009FBBC9 /* LXMBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D56822C6239F009FBBC9 /* LXMBaseRequest.m */; };
-		35E4D57022C6239F009FBBC9 /* LXMNetworkDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D56922C6239F009FBBC9 /* LXMNetworkDriver.m */; };
-		35E4D57122C6239F009FBBC9 /* LXMInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D56A22C6239F009FBBC9 /* LXMInfoManager.m */; };
 		35E4D57422C625EF009FBBC9 /* CustomRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D57322C625EF009FBBC9 /* CustomRequest.m */; };
 		35E4D57722C62669009FBBC9 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D57622C62669009FBBC9 /* Model.m */; };
 		F271234D3664F4102429FB84 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18432EC9BE06B0BB412F41B6 /* libPods-Example.a */; };
@@ -34,19 +30,10 @@
 		35E4D55122C61B25009FBBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35E4D55322C61B25009FBBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35E4D55422C61B25009FBBC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		35E4D56622C6239F009FBBC9 /* LXMInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMInfoManager.h; sourceTree = "<group>"; };
-		35E4D56722C6239F009FBBC9 /* LXMNetworkConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMNetworkConstant.m; sourceTree = "<group>"; };
-		35E4D56822C6239F009FBBC9 /* LXMBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMBaseRequest.m; sourceTree = "<group>"; };
-		35E4D56922C6239F009FBBC9 /* LXMNetworkDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMNetworkDriver.m; sourceTree = "<group>"; };
-		35E4D56A22C6239F009FBBC9 /* LXMInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMInfoManager.m; sourceTree = "<group>"; };
-		35E4D56B22C6239F009FBBC9 /* LXMNetworkConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMNetworkConstant.h; sourceTree = "<group>"; };
-		35E4D56C22C6239F009FBBC9 /* LXMNetworkDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMNetworkDriver.h; sourceTree = "<group>"; };
-		35E4D56D22C6239F009FBBC9 /* LXMBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMBaseRequest.h; sourceTree = "<group>"; };
 		35E4D57222C625EF009FBBC9 /* CustomRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomRequest.h; sourceTree = "<group>"; };
 		35E4D57322C625EF009FBBC9 /* CustomRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomRequest.m; sourceTree = "<group>"; };
 		35E4D57522C62669009FBBC9 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		35E4D57622C62669009FBBC9 /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
-		35E4D57822C62FF3009FBBC9 /* LXMNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXMNetwork.h; sourceTree = "<group>"; };
 		A33692B848B4C3001495AE55 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		C7E77BE14F9A09E0B3A768A9 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +71,6 @@
 		35E4D54422C61B23009FBBC9 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				35E4D56522C6239F009FBBC9 /* Classes */,
 				35E4D54522C61B23009FBBC9 /* AppDelegate.h */,
 				35E4D54622C61B23009FBBC9 /* AppDelegate.m */,
 				35E4D54822C61B23009FBBC9 /* ViewController.h */,
@@ -100,23 +86,6 @@
 				35E4D55422C61B25009FBBC9 /* main.m */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		35E4D56522C6239F009FBBC9 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				35E4D57822C62FF3009FBBC9 /* LXMNetwork.h */,
-				35E4D56622C6239F009FBBC9 /* LXMInfoManager.h */,
-				35E4D56A22C6239F009FBBC9 /* LXMInfoManager.m */,
-				35E4D56D22C6239F009FBBC9 /* LXMBaseRequest.h */,
-				35E4D56822C6239F009FBBC9 /* LXMBaseRequest.m */,
-				35E4D56B22C6239F009FBBC9 /* LXMNetworkConstant.h */,
-				35E4D56722C6239F009FBBC9 /* LXMNetworkConstant.m */,
-				35E4D56C22C6239F009FBBC9 /* LXMNetworkDriver.h */,
-				35E4D56922C6239F009FBBC9 /* LXMNetworkDriver.m */,
-			);
-			name = Classes;
-			path = ../../Classes;
 			sourceTree = "<group>";
 		};
 		38CBB5BC8108E5BB74EEFB8C /* Frameworks */ = {
@@ -236,11 +205,7 @@
 				35E4D55522C61B25009FBBC9 /* main.m in Sources */,
 				35E4D54722C61B23009FBBC9 /* AppDelegate.m in Sources */,
 				35E4D57722C62669009FBBC9 /* Model.m in Sources */,
-				35E4D56E22C6239F009FBBC9 /* LXMNetworkConstant.m in Sources */,
-				35E4D57022C6239F009FBBC9 /* LXMNetworkDriver.m in Sources */,
-				35E4D57122C6239F009FBBC9 /* LXMInfoManager.m in Sources */,
 				35E4D57422C625EF009FBBC9 /* CustomRequest.m in Sources */,
-				35E4D56F22C6239F009FBBC9 /* LXMBaseRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

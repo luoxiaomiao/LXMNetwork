@@ -6,7 +6,7 @@
 //  Copyright © 2019 omiao. All rights reserved.
 //
 
-#import "LXMBaseRequest.h"
+#import <LXMNetwork/LXMNetwork.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
