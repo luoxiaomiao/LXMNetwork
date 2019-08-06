@@ -261,6 +261,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
                 if (!error) {
                     error = [NSError errorWithDomain:NSStringFromClass([self class]) code:LXMNetworkErrorResponse userInfo:@{LXMNetworkErrorInfoKey : response ?: @"error response"}];
                 }
+                complete(NO, response, error);
                 return;
             }
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -1,8 +1,8 @@
 //
-//  LXMInfoManager.h
-//  LXMNetwork
+//  LXMInfoDispatcher.h
+//  Example
 //
-//  Created by luoxiaomiao on 2019/5/30.
+//  Created by luoxiaomiao on 2019/8/6.
 //  Copyright © 2019 omiao. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXMInfoManager : NSObject
+@interface LXMInfoDispatcher : NSObject
 
 + (instancetype)shareInstance;
 
-- (void)setupNetworkEngine;
+- (void)setupNetworkDriver;
 
 @end
 

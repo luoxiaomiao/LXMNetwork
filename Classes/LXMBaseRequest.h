@@ -34,6 +34,7 @@ typedef void(^LXMNetworkComplete) (BOOL success, id __nullable response, NSError
 
 - (void)cancel;
 
+#pragma mark - for override required;
 
 - (NSString *)host;
 
@@ -43,6 +44,7 @@ typedef void(^LXMNetworkComplete) (BOOL success, id __nullable response, NSError
 
 - (Class)responseClass;
 
+#pragma mark - for override optional;
 
 - (LXMNetworkParameterType)parameterType;
 
