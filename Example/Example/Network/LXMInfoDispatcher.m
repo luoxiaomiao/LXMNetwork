@@ -41,7 +41,7 @@
     [head enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [client.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
-    return [client GET:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [client GET:URLString parameters:parameters success:success failure:failure];
 }
 
 - (nonnull NSURLSessionDataTask *)POST:(nonnull NSString *)URLString
@@ -53,7 +53,7 @@
     [head enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [client.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
-    return [client POST:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [client POST:URLString parameters:parameters success:success failure:failure];
 }
 
 - (nonnull NSURLSessionDataTask *)POST:(nonnull NSString *)URLString
@@ -67,15 +67,17 @@
         [client.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
     client.requestSerializer = [AFJSONRequestSerializer serializer];
-    return [client POST:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [client POST:URLString parameters:parameters success:success failure:failure];
 }
 
 - (nonnull NSDictionary *)defaultHeadForRequest:(nonnull LXMBaseRequest *)request {
+    //设置公共请求头
     return @{};
 }
 
 
 - (nonnull NSDictionary *)defaultParamsForRequest:(nonnull LXMBaseRequest *)request {
+    //设置公参
     return @{};
 }
 
