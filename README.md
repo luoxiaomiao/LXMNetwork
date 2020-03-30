@@ -13,7 +13,7 @@ pod 'LXMNetwork'~>0.0.2
 
 ## 使用方法
 
-首先AppDelegate启动项目组件，然后新建基于LXMBaseRequest基类的子类，重写host、path、method、responseClass等方法即可。
+首先AppDelegate启动项目组件，然后新建基于LXMRequest基类的子类，重写host、path、method、responseClass等方法即可。
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

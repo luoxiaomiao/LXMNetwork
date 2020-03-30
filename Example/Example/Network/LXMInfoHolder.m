@@ -86,18 +86,18 @@
     return [client POST:URLString parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure];
 }
 
-- (nonnull NSDictionary *)defaultHeadForRequest:(nonnull LXMBaseRequest *)request {
+- (nonnull NSDictionary *)defaultHeadForRequest:(nonnull LXMRequest *)request {
     //设置公共请求头
     return @{};
 }
 
 
-- (nonnull NSDictionary *)defaultParamsForRequest:(nonnull LXMBaseRequest *)request {
+- (nonnull NSDictionary *)defaultParamsForRequest:(nonnull LXMRequest *)request {
     //设置公参
     return @{};
 }
 
-- (nonnull NSString *)defaultSchmeForRequest:(nonnull LXMBaseRequest *)request {
+- (nonnull NSString *)defaultSchmeForRequest:(nonnull LXMRequest *)request {
     return @"http";
 }
 

@@ -10,16 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LXMBaseRequest;
+@class LXMRequest;
 @protocol AFMultipartFormData;
 
 @protocol LXMNetworkDriverDelegate <NSObject>
 
-- (NSDictionary *)defaultHeadForRequest:(LXMBaseRequest *)request;
+- (NSDictionary *)defaultHeadForRequest:(LXMRequest *)request;
 
-- (NSDictionary *)defaultParamsForRequest:(LXMBaseRequest *)request;
+- (NSDictionary *)defaultParamsForRequest:(LXMRequest *)request;
 
-- (NSString *)defaultSchmeForRequest:(LXMBaseRequest *)request;
+- (NSString *)defaultSchmeForRequest:(LXMRequest *)request;
 
 - (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
                          head:(NSDictionary *)head
