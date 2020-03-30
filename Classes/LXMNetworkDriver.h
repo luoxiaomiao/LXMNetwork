@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXMBaseRequest;
+@protocol AFMultipartFormData;
 
 @protocol LXMNetworkDriverDelegate <NSObject>
 
@@ -22,13 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                          head:(NSDictionary *)head
-                   parameters:(id)parameters
+                   parameters:(NSDictionary *)parameters
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                          head:(NSDictionary *)head
-                   parameters:(id)parameters
+                   parameters:(NSDictionary *)parameters
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
@@ -37,6 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
                  JSONParameter:(NSDictionary *)parameters
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                          head:(NSDictionary *)head
+                    parameters:(NSDictionary *)parameters
+     constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                      progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end
 

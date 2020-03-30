@@ -11,9 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AFMultipartFormData;
+
 typedef void(^LXMNetworkComplete) (BOOL success, id __nullable response, NSError *__nullable error);
 
-@class LXMBaseRequest;
+typedef void(^LXMNetworkConstructingBody)(id<AFMultipartFormData> formData);
+
+typedef void(^LXMNetworkProgress)(NSProgress *progress);
 
 @interface LXMBaseRequest : NSObject
 
@@ -23,14 +27,15 @@ typedef void(^LXMNetworkComplete) (BOOL success, id __nullable response, NSError
 
 @property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^mock)(BOOL flag);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^retry)(NSInteger retryCount);
-
 @property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addParams)(NSDictionary *params);
+
+@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addConstructingBody)(LXMNetworkConstructingBody body);
+
+@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addUploadProgress)(LXMNetworkProgress progress);
 
 @property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^serialize)(BOOL autoSerialized);
 
 @property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^request)(LXMNetworkComplete complete);
-
 
 - (void)cancel;
 
@@ -54,16 +59,12 @@ typedef void(^LXMNetworkComplete) (BOOL success, id __nullable response, NSError
 
 - (NSString *)scheme;
 
-- (NSArray<NSNumber *> *)retryInterval;
-
-- (NSInteger)retryCount;
-
 - (id)validResponse:(id)originalResponse error:(NSError **)error;
 
 @end
 
 
-@protocol LXMBaseRequestProtocol <NSObject>
+@protocol LXMRequestProtocol <NSObject>
 
 @optional
 - (id)customSerialization:(id)JSON error:(NSError **)error;

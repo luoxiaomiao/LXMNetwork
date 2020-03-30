@@ -9,6 +9,7 @@
 #import "LXMBaseRequest.h"
 #import "LXMNetworkConstant.h"
 #import "LXMNetworkDriver.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 typedef void (^LXMNetworkSuccess)(NSURLSessionDataTask *task, id responseObject);
 
@@ -16,22 +17,22 @@ typedef void (^LXMNetworkFailure)(NSURLSessionDataTask *task, NSError *error);
 
 NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey";
 
-@interface LXMBaseRequest()<LXMBaseRequestProtocol> {
+@interface LXMBaseRequest()<LXMRequestProtocol> {
     
     BOOL _mock;
     
-    BOOL _retryCount;
-    
     BOOL _serialize;
 }
-
-@property (nonatomic, assign) NSInteger maxRetryCount;
 
 @property (nonatomic, strong) NSURLComponents *components;
 
 @property (nonatomic, weak) NSURLSessionDataTask *task;
 
 @property (nonatomic, copy) NSString *URLString;
+
+@property (nonatomic, copy, readonly) LXMNetworkConstructingBody constructingBody;
+
+@property (nonatomic, copy, readonly) LXMNetworkProgress uploadProgress;
 
 @end
 
@@ -70,16 +71,23 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(NSInteger))retry {
-    return ^(NSInteger retryCount) {
-        self->_retryCount = retryCount;
+- (__kindof LXMBaseRequest * _Nonnull (^)(NSDictionary * _Nonnull))addParams {
+    return ^(NSDictionary *params) {
+        self->_params = params;
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(NSDictionary * _Nonnull))addParams {
-    return ^(NSDictionary *params) {
-        self->_params = params;
+- (__kindof LXMBaseRequest * _Nonnull (^)(LXMNetworkConstructingBody _Nonnull))addConstructingBody {
+    return ^(LXMNetworkConstructingBody body) {
+        self->_constructingBody = body;
+        return self;
+    };
+}
+
+- (__kindof LXMBaseRequest * _Nonnull (^)(LXMNetworkProgress _Nonnull))addUploadProgress {
+    return ^(LXMNetworkProgress progress) {
+        self->_uploadProgress = progress;
         return self;
     };
 }
@@ -102,16 +110,15 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
         complete(NO, nil, error);
         return;
     }
-    [self lxmHead];
+    NSString *url = self.URLString;
     NSDictionary *param = [self lxmParams];
     LXMNetworkSuccess success = [self lxmSuccess:complete];
+    LXMNetworkFailure failure = [self lxmFailure:complete];
     if (_mock) {
         id data = [self lxmMockData:param];
         success(nil, data);
         return;
     }
-    NSString *url = self.URLString;
-    LXMNetworkFailure failure = [self lxmFailure:complete];
     switch (method) {
         case LXMNetworkMethodGET:
             _task = [[LXMNetworkDriver shareInstance].delegate GET:url head:[self lxmHead] parameters:param success:success failure:failure];
@@ -122,7 +129,10 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
                     _task = [[LXMNetworkDriver shareInstance].delegate POST:url head:[self lxmHead] parameters:param success:success failure:failure];
                     break;
                 case LXMNetworkParameterTypeJSON:
-                    _task = [[LXMNetworkDriver shareInstance].delegate POST:url head:[self lxmHead] parameters:param success:success failure:failure];
+                    _task = [[LXMNetworkDriver shareInstance].delegate POST:url head:[self lxmHead] JSONParameter:param success:success failure:failure];
+                    break;
+                case LXMNetworkParameterTypeFormData:
+                    _task = [[LXMNetworkDriver shareInstance].delegate POST:url head:[self lxmHead] parameters:param constructingBodyWithBlock:self.constructingBody progress:self.uploadProgress success:success failure:failure];
                     break;
                 default:
                     break;
@@ -130,7 +140,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
             break;
         default:
             break;
-    }    
+    }
 }
 
 - (NSDictionary *)head {
@@ -153,16 +163,8 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
     return [NSDictionary class];
 }
 
-- (NSArray<NSNumber *> *)retryInterval {
-    return @[@1, @2, @4, @8, @32, @64];
-}
-
 - (NSString *)scheme {
     return [[LXMNetworkDriver shareInstance].delegate defaultSchmeForRequest:self];
-}
-
-- (NSInteger)retryCount {
-    return 3;
 }
 
 - (LXMNetworkParameterType)parameterType {
@@ -306,7 +308,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
 - (BOOL)combineParam:(NSDictionary *)param query:(NSMutableString *)query {
     __block BOOL flag = YES;
     [param enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (([obj isKindOfClass:[NSString class]] && ((NSString *)obj).length > 0) || [obj isKindOfClass:[NSNumber class]]) {
+        if ([obj isKindOfClass:[NSString class]] || [obj isKindOfClass:[NSNumber class]]) {
             if (query.length > 0) {
                 [query appendString:@"&"];
             }

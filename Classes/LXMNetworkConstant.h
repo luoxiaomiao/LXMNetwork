@@ -24,7 +24,8 @@ typedef NS_ENUM(NSUInteger, LXMNetworkError) {
 
 typedef NS_ENUM(NSUInteger, LXMNetworkParameterType) {
     LXMNetworkParameterTypeString,
-    LXMNetworkParameterTypeJSON
+    LXMNetworkParameterTypeJSON,
+    LXMNetworkParameterTypeFormData
 };
 
 FOUNDATION_EXTERN NSString * const LXMNetworkErrorInfoKey;

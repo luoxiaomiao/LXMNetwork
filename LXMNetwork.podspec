@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "LXMNetwork"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "网络组件"
   spec.description  = <<-DESC
                       基于AFNetwoking的二次封装网络组件
@@ -14,6 +14,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/luoxiaomiao/LXMNetwork.git", :tag => "#{spec.version}" }
   spec.source_files  = "Classes", "Classes/*.{h,m}"
   spec.requires_arc = true
-  spec.dependency "AFNetworking"
+  spec.dependency "AFNetworking/NSURLSession",'~>3.2.1'
 
 end

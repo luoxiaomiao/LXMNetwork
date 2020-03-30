@@ -63,10 +63,10 @@
                                failure:(nonnull void (^)(NSURLSessionDataTask * _Nonnull, NSError * _Nonnull))failure {
     
     LXMHTTPSessionManager *client = [LXMHTTPSessionManager client];
+    client.requestSerializer = [AFJSONRequestSerializer serializer];
     [head enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [client.requestSerializer setValue:obj forHTTPHeaderField:key];
     }];
-    client.requestSerializer = [AFJSONRequestSerializer serializer];
     return [client POST:URLString parameters:parameters success:success failure:failure];
 }
 
