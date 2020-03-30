@@ -7,7 +7,6 @@ target 'Example' do
 
 pod 'LXMNetwork', :path => '../'
   
-pod 'AFNetworking'
 pod 'YYModel'
 
 end

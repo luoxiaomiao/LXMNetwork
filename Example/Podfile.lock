@@ -1,10 +1,4 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
   - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -12,21 +6,19 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - LXMNetwork (0.0.3):
     - AFNetworking/NSURLSession (~> 3.2.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - AFNetworking
   - LXMNetwork (from `../`)
   - YYModel
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - YYModel
+  trunk:
+    - AFNetworking
 
 EXTERNAL SOURCES:
   LXMNetwork:
@@ -37,6 +29,6 @@ SPEC CHECKSUMS:
   LXMNetwork: 571c86cd2b84ccc16e34a727c67359f3d863aaf7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: deccbbaa92ff5ccc253d66c3239d457b2007590d
+PODFILE CHECKSUM: 1ed64dbef8d796ea2b0b20620304b3a1bb4c857a
 
 COCOAPODS: 1.9.0

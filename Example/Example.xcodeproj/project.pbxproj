@@ -59,10 +59,10 @@
 		35C09C5D22F9731000457581 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				35C09C6022F9735A00457581 /* LXMHttpClient.h */,
-				35C09C5F22F9735A00457581 /* LXMHttpClient.m */,
 				35C09C6122F9735A00457581 /* LXMInfoHolder.h */,
 				35C09C5E22F9735A00457581 /* LXMInfoHolder.m */,
+				35C09C6022F9735A00457581 /* LXMHttpClient.h */,
+				35C09C5F22F9735A00457581 /* LXMHttpClient.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";

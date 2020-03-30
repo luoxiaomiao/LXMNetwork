@@ -9,7 +9,7 @@
 #import "LXMInfoHolder.h"
 #import "LXMHttpClient.h"
 #import <YYModel/YYModel.h>
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import <LXMNetwork.h>
 
 @interface LXMInfoHolder()<LXMNetworkDriverDelegate, LXMNetworkSerialProtocol>
