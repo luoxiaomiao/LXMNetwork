@@ -1,5 +1,5 @@
 //
-//  LXMBaseRequest.h
+//  LXMRequest.h
 //  LXMNetwork
 //
 //  Created by luoxiaomiao on 2019/5/29.
@@ -19,23 +19,23 @@ typedef void(^LXMNetworkConstructingBody)(id<AFMultipartFormData> formData);
 
 typedef void(^LXMNetworkProgress)(NSProgress *progress);
 
-@interface LXMBaseRequest : NSObject
+@interface LXMRequest : NSObject
 
 @property (nonatomic, copy, readonly) NSDictionary *params;
 
 @property (nonatomic, copy, readonly) NSString *URLString;
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^mock)(BOOL flag);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^mock)(BOOL flag);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addParams)(NSDictionary *params);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^addParams)(NSDictionary *params);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addConstructingBody)(LXMNetworkConstructingBody body);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^addConstructingBody)(LXMNetworkConstructingBody body);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^addUploadProgress)(LXMNetworkProgress progress);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^addUploadProgress)(LXMNetworkProgress progress);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^serialize)(BOOL autoSerialized);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^serialize)(BOOL autoSerialized);
 
-@property (nonatomic, copy, readonly) __kindof LXMBaseRequest *(^request)(LXMNetworkComplete complete);
+@property (nonatomic, copy, readonly) __kindof LXMRequest *(^request)(LXMNetworkComplete complete);
 
 - (void)cancel;
 

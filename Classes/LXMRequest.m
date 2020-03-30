@@ -1,12 +1,12 @@
 //
-//  LXMBaseRequest.m
+//  LXMRequest.m
 //  LXMNetwork
 //
 //  Created by luoxiaomiao on 2019/5/29.
 //  Copyright © 2019 omiao. All rights reserved.
 //
 
-#import "LXMBaseRequest.h"
+#import "LXMRequest.h"
 #import "LXMNetworkConstant.h"
 #import "LXMNetworkDriver.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
@@ -17,7 +17,7 @@ typedef void (^LXMNetworkFailure)(NSURLSessionDataTask *task, NSError *error);
 
 NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey";
 
-@interface LXMBaseRequest()<LXMRequestProtocol> {
+@interface LXMRequest()<LXMRequestProtocol> {
     
     BOOL _mock;
     
@@ -36,7 +36,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
 
 @end
 
-@implementation LXMBaseRequest
+@implementation LXMRequest
 
 - (instancetype)init {
     self = [super init];
@@ -57,42 +57,42 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
     return _URLString;
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(LXMNetworkComplete _Nonnull))request {
+- (__kindof LXMRequest * _Nonnull (^)(LXMNetworkComplete _Nonnull))request {
     return ^(LXMNetworkComplete complete) {
         [self startRequest:complete method:[self method]];
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(BOOL))mock {
+- (__kindof LXMRequest * _Nonnull (^)(BOOL))mock {
     return ^(BOOL mock) {
         self->_mock = mock;
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(NSDictionary * _Nonnull))addParams {
+- (__kindof LXMRequest * _Nonnull (^)(NSDictionary * _Nonnull))addParams {
     return ^(NSDictionary *params) {
         self->_params = params;
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(LXMNetworkConstructingBody _Nonnull))addConstructingBody {
+- (__kindof LXMRequest * _Nonnull (^)(LXMNetworkConstructingBody _Nonnull))addConstructingBody {
     return ^(LXMNetworkConstructingBody body) {
         self->_constructingBody = body;
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(LXMNetworkProgress _Nonnull))addUploadProgress {
+- (__kindof LXMRequest * _Nonnull (^)(LXMNetworkProgress _Nonnull))addUploadProgress {
     return ^(LXMNetworkProgress progress) {
         self->_uploadProgress = progress;
         return self;
     };
 }
 
-- (__kindof LXMBaseRequest * _Nonnull (^)(BOOL))serialize {
+- (__kindof LXMRequest * _Nonnull (^)(BOOL))serialize {
     return ^(BOOL serialize) {
         self->_serialize = serialize;
         return self;
@@ -156,7 +156,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
 }
 
 - (LXMNetworkMethod)method {
-    return LXMNetworkMethodGET;
+    return LXMNetworkMethodPOST;
 }
 
 - (Class)responseClass {
@@ -182,7 +182,7 @@ NSString * const LXMNetworkOriginalResponseKey = @"LXMNetworkOriginalResponseKey
     if (![object isKindOfClass:[self class]]) {
         return NO;
     }
-    LXMBaseRequest *temp = object;
+    LXMRequest *temp = object;
     return temp.hash == self.hash;
 }
 

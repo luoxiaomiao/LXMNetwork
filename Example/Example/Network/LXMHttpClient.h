@@ -1,5 +1,5 @@
 //
-//  LXMHTTPSessionManager.h
+//  LXMHttpClient.h
 //  Example
 //
 //  Created by luoxiaomiao on 2019/8/6.
@@ -8,11 +8,11 @@
 //  AFHTTPSessionManager的子类，主要功能是配置请求参数
 //  设置超时、证书、序列化
 
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXMHTTPSessionManager : AFHTTPSessionManager
+@interface LXMHttpClient : AFHTTPSessionManager
 
 + (instancetype)client;
 

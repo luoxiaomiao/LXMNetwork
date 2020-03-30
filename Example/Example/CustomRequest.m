@@ -16,7 +16,7 @@
 }
 
 - (NSString *)path {
-    return @"get";
+    return @"post";
 }
 
 - (Class)responseClass {

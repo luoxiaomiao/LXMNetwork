@@ -1,5 +1,5 @@
 //
-//  LXMInfoDispatcher.h
+//  LXMInfoHolder.h
 //  Example
 //
 //  Created by luoxiaomiao on 2019/8/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXMInfoDispatcher : NSObject
+@interface LXMInfoHolder : NSObject
 
 + (instancetype)shareInstance;
 

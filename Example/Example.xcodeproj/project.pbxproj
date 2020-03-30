@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35C09C6222F9735A00457581 /* LXMInfoDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C09C5E22F9735A00457581 /* LXMInfoDispatcher.m */; };
-		35C09C6322F9735A00457581 /* LXMHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C09C5F22F9735A00457581 /* LXMHTTPSessionManager.m */; };
+		35C09C6222F9735A00457581 /* LXMInfoHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C09C5E22F9735A00457581 /* LXMInfoHolder.m */; };
+		35C09C6322F9735A00457581 /* LXMHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C09C5F22F9735A00457581 /* LXMHttpClient.m */; };
 		35E4D54722C61B23009FBBC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D54622C61B23009FBBC9 /* AppDelegate.m */; };
 		35E4D54A22C61B23009FBBC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D54922C61B23009FBBC9 /* ViewController.m */; };
 		35E4D54D22C61B23009FBBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E4D54B22C61B23009FBBC9 /* Main.storyboard */; };
@@ -22,10 +22,10 @@
 
 /* Begin PBXFileReference section */
 		18432EC9BE06B0BB412F41B6 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35C09C5E22F9735A00457581 /* LXMInfoDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMInfoDispatcher.m; sourceTree = "<group>"; };
-		35C09C5F22F9735A00457581 /* LXMHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMHTTPSessionManager.m; sourceTree = "<group>"; };
-		35C09C6022F9735A00457581 /* LXMHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMHTTPSessionManager.h; sourceTree = "<group>"; };
-		35C09C6122F9735A00457581 /* LXMInfoDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMInfoDispatcher.h; sourceTree = "<group>"; };
+		35C09C5E22F9735A00457581 /* LXMInfoHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMInfoHolder.m; sourceTree = "<group>"; };
+		35C09C5F22F9735A00457581 /* LXMHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMHttpClient.m; sourceTree = "<group>"; };
+		35C09C6022F9735A00457581 /* LXMHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMHttpClient.h; sourceTree = "<group>"; };
+		35C09C6122F9735A00457581 /* LXMInfoHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMInfoHolder.h; sourceTree = "<group>"; };
 		35E4D54222C61B23009FBBC9 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E4D54522C61B23009FBBC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35E4D54622C61B23009FBBC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,10 +59,10 @@
 		35C09C5D22F9731000457581 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				35C09C6022F9735A00457581 /* LXMHTTPSessionManager.h */,
-				35C09C5F22F9735A00457581 /* LXMHTTPSessionManager.m */,
-				35C09C6122F9735A00457581 /* LXMInfoDispatcher.h */,
-				35C09C5E22F9735A00457581 /* LXMInfoDispatcher.m */,
+				35C09C6022F9735A00457581 /* LXMHttpClient.h */,
+				35C09C5F22F9735A00457581 /* LXMHttpClient.m */,
+				35C09C6122F9735A00457581 /* LXMInfoHolder.h */,
+				35C09C5E22F9735A00457581 /* LXMInfoHolder.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -223,8 +223,8 @@
 				35E4D55522C61B25009FBBC9 /* main.m in Sources */,
 				35E4D54722C61B23009FBBC9 /* AppDelegate.m in Sources */,
 				35E4D57722C62669009FBBC9 /* Model.m in Sources */,
-				35C09C6222F9735A00457581 /* LXMInfoDispatcher.m in Sources */,
-				35C09C6322F9735A00457581 /* LXMHTTPSessionManager.m in Sources */,
+				35C09C6222F9735A00457581 /* LXMInfoHolder.m in Sources */,
+				35C09C6322F9735A00457581 /* LXMHttpClient.m in Sources */,
 				35E4D57422C625EF009FBBC9 /* CustomRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

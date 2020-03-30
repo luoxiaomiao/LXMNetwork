@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CustomRequest : LXMBaseRequest
+@interface CustomRequest : LXMRequest
 
 @end
 

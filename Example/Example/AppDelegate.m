@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LXMInfoDispatcher.h"
+#import "LXMInfoHolder.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[LXMInfoDispatcher shareInstance] setupNetworkDriver];
+    [[LXMInfoHolder shareInstance] setupNetworkDriver];
 
     return YES;
 }

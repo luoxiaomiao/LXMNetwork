@@ -1,23 +1,23 @@
 //
-//  LXMHTTPSessionManager.m
+//  LXMHttpClient.m
 //  Example
 //
 //  Created by luoxiaomiao on 2019/8/6.
 //  Copyright © 2019 omiao. All rights reserved.
 //
 
-#import "LXMHTTPSessionManager.h"
+#import "LXMHttpClient.h"
 
 #define  TimeOut 60.0f
 
-@implementation LXMHTTPSessionManager
+@implementation LXMHttpClient
 
 + (instancetype)client {
     NSURLSessionConfiguration *configration = [NSURLSessionConfiguration defaultSessionConfiguration];
     configration.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
     configration.timeoutIntervalForRequest = TimeOut;
     configration.timeoutIntervalForResource = TimeOut;
-    LXMHTTPSessionManager *client = [[LXMHTTPSessionManager alloc] initWithSessionConfiguration:configration];
+    LXMHttpClient *client = [[LXMHttpClient alloc] initWithSessionConfiguration:configration];
     client.requestSerializer = [AFHTTPRequestSerializer serializer];
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
     responseSerializer.removesKeysWithNullValues = YES;
@@ -32,7 +32,7 @@
                                                         @"text/html",
                                                         @"text/json",
                                                         @"text/javascript",
-                                                        @"application/x-msgpack", nil];    
+                                                        @"application/x-msgpack", nil];
     // 这里可增加HTTPS证书验证设置
     return client;
 }
@@ -53,7 +53,7 @@
                                     success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                     failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
     
-   // 这里用于后续处理成功和失败回调处理
+    // 这里用于后续处理成功和失败回调处理
     
     if ([[method uppercaseString] isEqualToString:@"GET"]) {
         return [super GET:URLString parameters:parameters progress:nil success:success failure:failure];

@@ -10,11 +10,11 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<LXMNetwork/LXMNetwork.h>)
-#import <LXMNetwork/LXMBaseRequest.h>
+#import <LXMNetwork/LXMRequest.h>
 #import <LXMNetwork/LXMNetworkConstant.h>
 #import <LXMNetwork/LXMNetworkDriver.h>
 #else
-#import "LXMBaseRequest.h"
+#import "LXMRequest.h"
 #import "LXMNetworkConstant.h"
 #import "LXMNetworkDriver.h"
 #endif
