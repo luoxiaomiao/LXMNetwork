@@ -8,17 +8,18 @@
 ## 集成方式
 
 ```ruby
-pod 'LXMNetwork'~>0.0.2
+pod 'LXMNetwork'~>1.0.0
 ```
 
 ## 使用方法
+新建一下LXMInfoHolder工具类遵循LXMNetworkDriverDelegate、LXMNetworkSerialProtocol实现这两个协议的方法，然后新建一个AFHTTPSessionManager的子类，非必要，配置相关参数，具体可以参考Example。
 
-首先AppDelegate启动项目组件，然后新建基于LXMRequest基类的子类，重写host、path、method、responseClass等方法即可。
+最后AppDelegate启动项目组件，新建基于LXMRequest基类的子类，重写host、path、method、responseClass等方法即可。
 
-```
+```Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[LXMInfoDispatcher shareInstance] setupNetworkDriver];
+    [[LXMInfoHolder shareInstance] setupNetworkDriver];
 
     return YES;
 }
