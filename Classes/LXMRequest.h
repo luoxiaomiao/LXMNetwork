@@ -33,6 +33,7 @@ typedef void(^LXMNetworkProgress)(NSProgress *progress);
 
 @property (nonatomic, copy, readonly) __kindof LXMRequest *(^addUploadProgress)(LXMNetworkProgress progress);
 
+/// 如果不转Model需要调用此回调
 @property (nonatomic, copy, readonly) __kindof LXMRequest *(^serialize)(BOOL autoSerialized);
 
 @property (nonatomic, copy, readonly) __kindof LXMRequest *(^request)(LXMNetworkComplete complete);
