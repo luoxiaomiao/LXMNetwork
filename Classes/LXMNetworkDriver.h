@@ -22,30 +22,30 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)defaultSchmeForRequest:(LXMRequest *)request;
 
 - (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
-                         head:(NSDictionary *)head
-                   parameters:(id)parameters
-                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+                                  head:(NSDictionary *)head
+                            parameters:(id)parameters
+                               success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                               failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                         head:(NSDictionary *)head
-                   parameters:(id)parameters
-                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+                                   head:(NSDictionary *)head
+                             parameters:(id)parameters
+                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                          head:(NSDictionary *)head
-                 JSONParameter:(NSDictionary *)parameters
-                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+                                   head:(NSDictionary *)head
+                          JSONParameter:(NSDictionary *)parameters
+                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                          head:(NSDictionary *)head
-                    parameters:(id)parameters
-     constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
-                      progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+                                   head:(NSDictionary *)head
+                             parameters:(id)parameters
+              constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                               progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end
 
